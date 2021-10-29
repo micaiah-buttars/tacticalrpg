@@ -1,0 +1,11 @@
+*.log
+*.pyc
+.~lock.*#
+.DS_Store
+.*project
+*.e4p
+.idea
+.mypy_cache
+doc/_build
+doc/_autosummary
+venv
