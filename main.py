@@ -50,7 +50,6 @@ gettext.install('ice-emblem', resources.LOCALE_PATH)  # load translations
 
 # command-line argument parsing
 parser = argparse.ArgumentParser(description=_('Tactical RPG, the free software clone of Fire Emblem'))
-parser.add_argument('--version', action='version', version='Tactical RPG ' + VERSION)
 parser.add_argument('-s', '--skip', action='store_true', help=_('Skip main menu'), required=False)
 parser.add_argument('-m', '--map', action='store', help=_('Which map to load'), default=None, required=False)
 parser.add_argument('-l', '--logging', action='store', help=_('Choose logging level'), default=20, type=int,
@@ -58,6 +57,15 @@ parser.add_argument('-l', '--logging', action='store', help=_('Choose logging le
 parser.add_argument('-d', '--debug', action='store_const', help=_('Debug mode'), const=0, dest='logging')
 parser.add_argument('-f', '--file', action='store', help=_('Log file'), default=None, required=False)
 args = parser.parse_args()
+
+
+# log to screen
+logging.basicConfig(level=args.logging, filename=args.file, filemode='a')
+logging.info(_('Welcome to %s!') % ('Tactical RPG ' + VERSION))
+logging.info(_('You are using Pygame version %s.') % pygame.version.ver)
+if pygame.version.vernum < (2, 0, 0):
+    logging.warning(_('You are running a version of Pygame that might be outdated.'))
+    logging.warning(_('Ice Emblem is tested only with Pygame 2.0.0+.'))
 
 
 def launch():

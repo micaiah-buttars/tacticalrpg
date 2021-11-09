@@ -19,7 +19,7 @@
    eJxjYCAMaohQQ0ivGCMDgzgQSzCSrtcMqscCSnsAsScBvXOAWA6Iw4B6woE4AsleDSLMgOlHBoFAHESEGelQ/XORMAgY4jADGWsS8Jchkn4QCAPicCQcQUB/ERK7DE3OHE3/RDQ8CY9eEKhAYgMASFoT3w==
   </data>
  </layer>
- <objectgroup color="#0000ff" id="4" name="Player Turn">
+ <objectgroup color="#0000ff" id="4" name="Player">
   <properties>
    <property name="battle_music" value="Battle Theme.ogg"/>
    <property name="boss" value="Boss"/>
@@ -42,7 +42,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup color="#ff0000" id="5" name="Enemy Turn">
+ <objectgroup color="#ff0000" id="5" name="Enemy">
   <properties>
    <property name="AI" value=""/>
    <property name="battle_music" value="Battle Theme.ogg"/>
