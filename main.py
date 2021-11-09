@@ -102,6 +102,17 @@ else:
         utils.return_to_os()
 
     except:
+        # other error
+        kind_error_message = _("Oops, something went wrong. Dumping brain contents:\n"
+                               "\n"
+                               "%s\n"
+                               "%s\n"
+                               "%s\n"
+                               "\n"
+                               ) % ('-' * 80 + '\n', traceback.format_exc(), '-' * 80,
+                                    "ah")
+
+        print(kind_error_message)
 
         fname = args.file if args.file else "traceback.log"
         with open(fname, 'a') as f:
